@@ -1,6 +1,6 @@
 import RPi.GPIO as gpio
 import time
-import wiringpi
+#import wiringpi
 
 from datetime import datetime, timedelta
 from sys import stdout
