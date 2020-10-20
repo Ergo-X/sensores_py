@@ -31,12 +31,12 @@ async def main():
     while True:
         # Confere se o valor do sensor de luminosidade não é None
         # Se for None ele declara o valor de lux como 0
-        if tsl.lux == None:
-            lux = 0
-            print(lux)
+        #if tsl.lux == None:
+        #    lux = 0
+        #    print(lux)
         # Se não for None ele pega o valor de leitura do sensor e declara dentro da variável lux
-        else:
-            lux = tsl.lux
+        #else:
+        #    lux = tsl.lux
         
         # Instancia a classe de Decibéis
         db = Decibel()    
