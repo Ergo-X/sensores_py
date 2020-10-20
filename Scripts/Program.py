@@ -48,7 +48,7 @@ async def main():
         #            "decibeis": str(round(float(db.medir_decibeis()),2))}
         message = { "temperatura": str(round(float(aht.temperature),2)),
                     "umidade": str(round(float(aht.relative_humidity),2)),
-                    "luminosidade": str(round(float(304)),2),
+                    "luminosidade": str(round(float(304),2)),
                     "decibeis": str(round(float(db.medir_decibeis()),2))}
         
         # Envia para o Device a mensagem que foi montada
