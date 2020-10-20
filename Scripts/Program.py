@@ -44,7 +44,7 @@ async def main():
         # Monta em json a mensagem que vai ser enviada ao IotHub com as leituras dos sensores
         message = { "temperatura": str(round(float(aht.temperature),2)),
                     "umidade": str(round(float(aht.relative_humidity),2)),
-                    "luminosidade": str(round(float(lux),2)),
+                    "luminosidade": str(round(lux)),
                     "decibeis": str(round(float(db.medir_decibeis()),2))}
         
         # Envia para o Device a mensagem que foi montada
