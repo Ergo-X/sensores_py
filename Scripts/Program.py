@@ -16,7 +16,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 # Declara o driver do sensor de temperatura e umidadade AHT10 como aht
 aht = adafruit_ahtx0.AHTx0(i2c)
 # Declara o driver do sensor de luminosidade TSL2561 como tsl
-tsl = adafruit_tsl2561.TSL2561(i2c)
+#tsl = adafruit_tsl2561.TSL2561(i2c)
 # Declara a variável lux como 0
 lux = 0
 
@@ -42,9 +42,13 @@ async def main():
         db = Decibel()    
             
         # Monta em json a mensagem que vai ser enviada ao IotHub com as leituras dos sensores
+        #message = { "temperatura": str(round(float(aht.temperature),2)),
+                    "umidade": str(round(float(aht.relative_humidity),2)),
+                    "luminosidade": str(round(float(lux)),2),
+                    "decibeis": str(round(float(db.medir_decibeis()),2))}
         message = { "temperatura": str(round(float(aht.temperature),2)),
                     "umidade": str(round(float(aht.relative_humidity),2)),
-                    "luminosidade": str(round(lux)),
+                    "luminosidade": str(round(float(304)),2),
                     "decibeis": str(round(float(db.medir_decibeis()),2))}
         
         # Envia para o Device a mensagem que foi montada
